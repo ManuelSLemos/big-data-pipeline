@@ -2,8 +2,6 @@
     CREATE DATABASE Escuela;
 
 # Solución Ejercicio 2
-    sql
-    Copy code
     USE Escuela;
     CREATE TABLE Estudiantes (
         id INT AUTO_INCREMENT PRIMARY KEY,
