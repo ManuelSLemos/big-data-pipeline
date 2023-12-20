@@ -1,0 +1,5 @@
+1.- docker run --rm -w /app -v ${PWD}:/app -it python:3.10 bash
+2.- pip install poetry==1.7.1
+3.- poetry init --no-interaction <nombre-proyecto>
+4.- poetry add <dependencia>
+5.- poetry run python <archivo> 
