@@ -1,6 +1,11 @@
-1.- docker run --rm -w /app -v ${PWD}:/app -it python:3.10 bash
+1.- docker run --rm -w /app -v ${PWD}:/app --network pipeline_network -it python:3.10 bash
 2.- pip install poetry==1.7.1
-3.- poetry init --no-interaction <nombre-proyecto>
-4.- poetry add <dependencia>
-5.- poetry run python <archivo> 
-6.- poetry install (si ya existe un proyecto)
+3.- poetry install (si ya existe un proyecto)
+
+---- SOLO SI NO TENEIS PROYECTO
+- poetry init --no-interaction <nombre-proyecto>
+
+---- COMANDOS HABITUALES
+
+- poetry add <dependencia>
+- poetry run python <archivo> 
