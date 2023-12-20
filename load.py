@@ -11,7 +11,6 @@ engine = create_engine(f'mysql+mysqlconnector://{username}:{password}@{host}:{po
 
 conn = engine.connect()
 
-query = 'SHOW DATABASES'
 create_table = '''CREATE TABLE IF NOT EXISTS characters ( 
     id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), 
     status VARCHAR(255), species VARCHAR(255), 
@@ -23,9 +22,12 @@ create_table = '''CREATE TABLE IF NOT EXISTS characters (
 # Create Table
 conn.execute(text(create_table))
 
-# Guardar los datos de la web
-insert_into = "INSERT INTO characters (name, status, species, kind, gender, origin, location) VALUES ('name', 'status', 'species', 'kind', 'gender', 'origin', 'location');"
 
-conn.execute(text(insert_into))
 
-conn.close()
+
+
+# import csv
+# with open('rick.csv') as csvfile:
+#     reader = csv.reader(csvfile, delimiter=',')
+#     for row in reader:
+#         print(row)

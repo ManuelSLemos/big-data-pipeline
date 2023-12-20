@@ -9,6 +9,8 @@ services:
     container_name: metabase
     ports:
       - 3000:3000
+    networks:
+      - pipeline_network
     restart: always
 
   notebook:

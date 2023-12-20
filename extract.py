@@ -3,6 +3,9 @@ import requests # Consultar a paginas webs o apis
 import pandas # Organizar los datos
 import json
 
+from sqlalchemy import text
+from load import conn
+
 # Crear el esqueleto de datos que extraemos del API
 df = pandas.DataFrame([], columns=['id', 'name', 'status', 'species', 'kind', 'gender', 'origin', 'location'])
 
@@ -24,6 +27,11 @@ for i in range(0, 20, 1):
     origin = external_json['results'][i]['origin']['name']
     location = external_json['results'][i]['location']['name']
 
+    insert_into = f'INSERT INTO characters (name, status, species, kind, gender, origin, location) VALUES ("{name}", "{status}", "{species}", "{kind}", "{gender}", "{origin}", "{location}");'
+
+    conn.execute(text(insert_into))
+    conn.commit()
+
     # Agregar un nuevo registro utilizando _append()
     df = df._append({ 
         'id': id, 
@@ -37,3 +45,4 @@ for i in range(0, 20, 1):
     }, ignore_index=True)
 
 df.to_csv('rick.csv', index=False)
+conn.close()
