@@ -3,3 +3,4 @@
 3.- poetry init --no-interaction <nombre-proyecto>
 4.- poetry add <dependencia>
 5.- poetry run python <archivo> 
+6.- poetry install (si ya existe un proyecto)
