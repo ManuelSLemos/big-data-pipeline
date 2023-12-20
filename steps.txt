@@ -1,11 +1,14 @@
-1.- docker run --rm -w /app -v ${PWD}:/app --network pipeline_network -it python:3.10 bash
-2.- pip install poetry==1.7.1
-3.- poetry install (si ya existe un proyecto)
+1.- Crear el repo de Github ( entrar en los Codespaces )
+2.- docker run --rm -w /app -v ${PWD}:/app --network pipeline_network -it python:3.10 bash
+3.- pip install poetry==1.7.1
+4.- poetry init --no-interaction <nombre-proyecto>
+5.- poetry add requests pandas sqlalchemy mysql-connector-python
+6.- Crear docker-compose.yml con mysql editor metabase
+7.- Script Python extraer datos
+8.- Script Python Conexión BBDD
+9.- Vincular MySql con Metabase
 
----- SOLO SI NO TENEIS PROYECTO
-- poetry init --no-interaction <nombre-proyecto>
-
----- COMANDOS HABITUALES
+-------------
 
 - poetry add <dependencia>
 - poetry run python <archivo> 
