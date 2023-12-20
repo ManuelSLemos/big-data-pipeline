@@ -2,6 +2,8 @@ version: '3.8'
 
 services:
 
+  # scrapper:
+
   metabase:
     image: metabase/metabase
     container_name: metabase
