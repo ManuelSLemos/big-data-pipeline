@@ -6,3 +6,9 @@ docker-start:
 
 start-notebook:
 	docker compose up notebook
+
+bash:
+	docker run --rm \
+	-w /app \
+	-v ${PWD}:/app \
+	-it python:3.10 bash
