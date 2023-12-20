@@ -13,26 +13,27 @@ external_data = requests.get(URL).text # string
 # String a JSON
 external_json = json.loads(external_data)
 
-# Navegado por el JSON para extraer datos
-id = external_json['results'][0]['id']
-name = external_json['results'][0]['name']
-status = external_json['results'][0]['status']
-species = external_json['results'][0]['species']
-kind = external_json['results'][0]['type']
-gender = external_json['results'][0]['gender']
-origin = external_json['results'][0]['origin']['name']
-location = external_json['results'][0]['location']['name']
+for i in range(0, 20, 1):
+    # Navegado por el JSON para extraer datos
+    id = external_json['results'][i]['id']
+    name = external_json['results'][i]['name']
+    status = external_json['results'][i]['status']
+    species = external_json['results'][i]['species']
+    kind = external_json['results'][i]['type']
+    gender = external_json['results'][i]['gender']
+    origin = external_json['results'][i]['origin']['name']
+    location = external_json['results'][i]['location']['name']
 
-# Agregar un nuevo registro utilizando _append()
-df = df._append({ 
-    'id': id, 
-    'name': name, 
-    'status': status, 
-    'species': species, 
-    'kind': kind, 
-    'gender': gender, 
-    'origin': origin, 
-    'location': location 
-}, ignore_index=True)
+    # Agregar un nuevo registro utilizando _append()
+    df = df._append({ 
+        'id': id, 
+        'name': name, 
+        'status': status, 
+        'species': species, 
+        'kind': kind, 
+        'gender': gender, 
+        'origin': origin, 
+        'location': location 
+    }, ignore_index=True)
 
-# df.to_csv('rick.csv', index=False)
+df.to_csv('rick.csv', index=False)
